@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="CSS/style.css" />
+    <title>Yenoke</title>
+  </head>
+  <body>
+    <nav class="navbar background h-nav-resp">
+      <ul class="nav-list v-class-resp">
+        <div class="logo">
+          <img src="https://source.unsplash.com/800x800/?macbook" alt="logo" />
+        </div>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About me</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact Me</a></li>
+        </li>
+
+        <div
+          class="g-ytsubscribe"
+          data-channelid="UCNKSXojWRm5iyhuQxyRiQng"
+          data-layout="default"
+          data-count="default"
+          href="https://www.youtube.com/c/Yenoke"
+        ></div>
+      </ul>
+      <div class="rightNav v-class-resp">
+        <input type="text" name="search" id="search" />
+        <button class="btn btn-sm">Search</button>
+      </div>
+      <div class="burger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+    </nav>
+
+    <section class="background firstSection" id="home">
+      <div class="box-main">
+        <div id= "container" class="firstHalf">
+          <p id="welcome" class="text-big">Welcome to the website of Yenoke!</p>
+          <p class="text-small">
+            In my channel, you will be able to see high quality, well edited
+            gaming videos!
+          </p>
+          <div class="button">
+            <a href="https://www.youtube.com/channel/UCNKSXojWRm5iyhuQxyRiQng?sub_confirmation=1&feature=subscribe-embed-click">
+              <button class="btn">Subscribe</button>
+            </a>
+            <a href="https://www.youtube.com/watch?v=xDl6AGdM2w8&t=0">
+              <button class="btn">Watch Video</button>
+            </a>
+          </div>
+        </div>
+
+        <div class="secondHalf">
+          <img src="Images/Gaming Controller.png" alt="Controller" />
+        </div>
+      </div>
+    </section>
+    <section class="section section-left">
+      <div class="paras">
+        <p class="sectionTag text-big">
+          Each and every type of content that you like!
+        </p>
+        <p class="sectionSubTag text-small">
+          From Gaming videos to Tech related videos! At least 1 upload per
+          week... You will never get bored!
+        </p>
+      </div>
+      <div class="thumbnail">
+        <img
+          src="https://source.unsplash.com/250x250/?YouTube Gaming Video"
+          alt="Mouse Image"
+          class="imgFluid"
+        />
+      </div>
+    </section>
+    <hr />
+    <section class="section" id="services">
+      <div class="paras">
+        <p class="sectionTag text-big">What are video games?</p>
+        <p class="sectionSubTag text-small">
+          Video games could have both negative and positive impact on children
+          especially. The positive side involves where the children could
+          develop their thinking skills and stimulate their learning facts like
+          strategic thinking, cooperation, creative thinking, and also
+          innovative thinking, which is a very important part in the information
+          society.
+        </p>
+      </div>
+      <div class="thumbnail">
+        <img
+          src="https://source.unsplash.com/250x250/?streaming mic"
+          alt="Mouse Image"
+          class="imgFluid"
+        />
+      </div>
+    </section>
+    <hr />
+    <section class="section section-left">
+      <div class="paras">
+        <p class="sectionTag text-big">
+          Each and every type of content that you like!
+        </p>
+        <p class="sectionSubTag text-small">
+          From Gaming videos to Tech related videos! At least 1 upload per
+          week... You will never get bored!
+        </p>
+      </div>
+      <div class="thumbnail">
+        <img
+          src="https://source.unsplash.com/250x250/?javascript"
+          alt="Mouse Image"
+          class="imgFluid"
+        />
+      </div>
+    </section>
+    <hr />
+    <section class="section">
+      <div class="paras">
+        <p class="sectionTag text-big">I'm active YouTuber</p>
+        <p class="sectionSubTag text-small">
+          If you want more types of content, I am always here to listen to each
+          and every kind of thought that you write in my comments!
+        </p>
+      </div>
+      <div class="thumbnail">
+        <img
+          src="https://source.unsplash.com/250x250/?gaming pc"
+          alt="Mouse Image"
+          class="imgFluid"
+        />
+      </div>
+    </section>
+    <hr style="width: 100%" , size="3" , color="black" />
+    <section class="video">
+      <script src="js/app.js"></script>
+      <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+      <div id="player"></div>
+
+      <script class="watch">
+        // 2. This code loads the IFrame Player API code asynchronously.
+        var tag = document.createElement("script");
+
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName("script")[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        // 3. This function creates an <iframe> (and YouTube player)
+        //    after the API code downloads.
+        var player;
+        function onYouTubeIframeAPIReady() {
+          player = new YT.Player("player", {
+            height: "200",
+            width: "350",
+            videoId: "xDl6AGdM2w8",
+            playerVars: {
+              playsinline: 1,
+            },
+            events: {
+              onReady: onPlayerReady,
+              onStateChange: onPlayerStateChange,
+            },
+          });
+        }
+
+        // 4. The API will call this function when the video player is ready.
+        function onPlayerReady(event) {
+          event.target.playVideo();
+        }
+
+        // 5. The API calls this function when the player's state changes.
+        //    The function indicates that when playing a video (state=1),
+        //    the player should play for six seconds and then stop.
+        var done = false;
+        function onPlayerStateChange(event) {
+          if (event.data == YT.PlayerState.PLAYING && !done) {
+            setTimeout(stopVideo, 6000);
+            done = true;
+          }
+        }
+        function stopVideo() {
+          player.stopVideo();
+        }
+      </script>
+    </section>
+    <section class="contact" id="contact">
+      <form action="https://www.formsubmit.co/" method="POST">
+        <h2 class="text-center">Contact Me</h2>
+        <div class="form">
+          <input type="hidden" name="_subject" value="New submission!" />
+          <input
+            class="form-input"
+            type="name"
+            name="name"
+            id="name"
+            placeholder="Enter Your Username"
+            required
+          />
+          <input
+            class="form-input"
+            type="email"
+            name="email"
+            placeholder="Enter Your Email"
+            required
+          />
+          <textarea
+            class="form-input"
+            name="text"
+            id="text"
+            cols="30"
+            rows="8"
+            placeholder="Elaborate Your Concern"
+            required
+          ></textarea>
+          <input type="hidden" name="_next" value="HTML/submit.html" />
+          <button type="submit" class="btn btn-sm btn-dark" method="POST">
+            Submit
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <footer class="background">
+      <p class="text-footer">
+        Copyright &copy; 2022 Yenoke - All rights reserved
+      </p>
+    </footer>
+    <body class="link">
+      <a href="https://www.youtube.com/c/yenoke">
+        <img
+          class="youtube"
+          alt="YouTube channel"
+          src="Images/YouTube_full-color_icon_(2017).svg (1).png"
+          width="35"
+          height="25"
+        />
+      </a>
+      <a href="https://www.youtube.com/c/yenoke">
+        <img
+          class="roblox"
+          alt="Roblox Icon"
+          src="Images/Roblox Icon.png"
+          width="27"
+          height="27"
+        />
+      </a>
+    </body>
+    <script src="js/resp.js"></script>
+  </body>
+</html>
